@@ -14,6 +14,6 @@ environment:
        secure: wgwH1Q4qJs6CisALwyeQ6n1ZrEfXz8qI4
 
 after_test: 
-    - packages\OpenCover.4.7.922\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow /domain:single  testCI.Tests\bin\debug\testCI.Tests.dll" -output:coverage.xml
+    - C:\ProgramData\chocolatey\lib\opencover.portable\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"%programfiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\MSTest.exe" -targetargs:"/testcontainer:testCI.Tests.dll" -output:coverage.xml
         
     - packages\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage.xml
